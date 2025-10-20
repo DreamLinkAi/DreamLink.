@@ -1,0 +1,136 @@
+<!doctype html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DreamLink — Domine seus sonhos</title>
+  <meta name="description" content="DreamLink: dispositivo VR com IA que controla sonhos, evita pesadelos e melhora o sono. Experimente a demonstração na loja." />
+  <style>
+    :root{--bg:#041826;--card:#0b2630;--accent:#5fe0ff;--muted:#98b4bf;--glass:rgba(255,255,255,0.04);--radius:14px}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#02141a);color:#eaf9fb}
+    .wrap{max-width:1100px;margin:36px auto;padding:28px}
+    header{display:flex;align-items:center;gap:18px}
+    .brand{font-weight:700;font-size:20px}
+    nav{margin-left:auto;color:var(--muted);font-size:14px}.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+h1{font-size:44px;line-height:1.02;margin:0}
+p.lead{color:var(--muted);font-size:17px;margin:16px 0 22px}
+
+.cta{display:flex;gap:12px}
+.btn{background:linear-gradient(90deg,var(--accent),#8df0ff);color:#01222b;padding:12px 18px;border-radius:12px;font-weight:700;border:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(95,224,255,0.12)}
+
+.card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(2,8,12,.6)}
+.product-image{width:100%;height:320px;background:#072433;border-radius:10px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.product-image img{max-width:100%;height:100%;object-fit:cover}
+
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.feature{background:var(--glass);padding:14px;border-radius:10px;text-align:center}
+.feature h4{margin:6px 0 4px}
+
+.testimonials{display:flex;gap:12px;margin-top:20px}
+.testimonials img{width:48%;border-radius:10px}
+
+.banner{margin-top:28px;background:linear-gradient(90deg, rgba(95,224,255,0.06), rgba(141,240,255,0.03));padding:18px;border-radius:12px;display:flex;align-items:center;justify-content:space-between}
+
+footer{margin-top:36px;color:var(--muted);font-size:13px;text-align:center}
+
+/* Modal simples */
+.modal{position:fixed;inset:0;background:rgba(2,6,8,.6);display:none;align-items:center;justify-content:center;padding:20px}
+.modal .panel{background:#071b22;padding:18px;border-radius:12px;max-width:760px;width:100%}
+.close{background:transparent;border:0;color:var(--muted);float:right;cursor:pointer}
+
+@media(max-width:920px){.hero{grid-template-columns:1fr}.product-image{height:220px}.features{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.features{grid-template-columns:1fr}.wrap{padding:14px}h1{font-size:28px}}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">DreamLink</div>
+      <nav>Domine seus sonhos • #DomineSeusSonhos</nav>
+    </header><main class="hero">
+  <section>
+    <h1>Domine seus sonhos. Durma sem pesadelos.</h1>
+    <p class="lead">DreamLink é um headset VR com IA que otimiza seu sono: evita pesadelos, cria sonhos personalizados e ajuda você a acordar revigorado — sem remédios.</p>
+
+    <div class="cta">
+      <button class="btn" onclick="openModal()">Ver demonstração</button>
+      <button class="btn ghost" onclick="openGallery()">Ver imagens</button>
+    </div>
+
+    <div class="features">
+      <div class="feature"><h4>Controle de sonhos</h4><p style="color:var(--muted);font-size:13px">Personalize ambientes oníricos e reduza pesadelos automaticamente.</p></div>
+      <div class="feature"><h4>IA adaptativa</h4><p style="color:var(--muted);font-size:13px">Aprende seus padrões de sono e ajusta recomendações.</p></div>
+      <div class="feature"><h4>DreamStudio</h4><p style="color:var(--muted);font-size:13px">Revise, grave e interprete seus sonhos com visualizações fáceis.</p></div>
+    </div>
+
+    <div class="banner">
+      <div>
+        <strong>Experimente na loja</strong>
+        <div style="color:var(--muted);font-size:13px">Reserve uma demonstração e teste deitado em um ambiente controlado.</div>
+      </div>
+      <div><button class="btn" onclick="reserveDemo()">Agendar demo</button></div>
+    </div>
+  </section>
+
+  <aside class="card">
+    <div class="product-image">
+      <!-- Substitua por: images/dreamlink_showcase.png -->
+      <img src="images/dreamlink_showcase.png" alt="DreamLink showcase" />
+    </div>
+    <div style="margin-top:14px;display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-weight:700">Na loja</div>
+        <div style="color:var(--muted);font-size:13px">Teste o DreamLink em uma cama demo e sinta a experiência.</div>
+      </div>
+      <button class="btn" onclick="reserveDemo()">Agendar demo</button>
+    </div>
+  </aside>
+</main>
+
+<section style="margin-top:26px" class="card">
+  <h3 style="margin:0 0 8px">Depoimentos reais</h3>
+  <p style="color:var(--muted);margin:0 0 14px">"Não acreditava até testar — acordei sem ansiedade e com ideias novas." — Marina</p>
+  <div class="testimonials">
+    <img src="images/dreamlink_showcase2.png " alt="Demo na loja" />
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding-left:14px">
+      <strong>Quer testar agora?</strong>
+      <p style="color:var(--muted);margin:6px 0">Visite nossas lojas parceiras ou agende uma demonstração virtual. Receba um guia gratuito de preparação para a melhor experiência de sono.</p>
+      <div style="display:flex;gap:8px"><button class="btn" onclick="reserveDemo()">Agendar demo</button><button class="btn ghost" onclick="openContact()">Fale conosco</button></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © DreamLink — Design e conteúdo para demonstração. Imagens substituíveis. Para publicar em DreamLink.ai, faça deploy do diretório contendo este arquivo e a pasta /images.
+</footer>
+
+  </div>  <!-- Modal simples para demo / gallery -->  <div id="modal" class="modal" onclick="closeModal(event)">
+    <div class="panel" role="dialog" aria-modal="true">
+      <button class="close" onclick="closeModal(event)">✕</button>
+      <h3>Experimente a demonstração</h3>
+      <p style="color:var(--muted)">Nesta demonstração interativa (mock), você verá como o DreamLink personaliza sonhos, evita pesadelos e fornece análises no app DreamStudio.</p>
+      <div style="display:flex;gap:10px;margin-top:12px">
+        <button class="btn" onclick="startDemo()">Iniciar demo (simulação)</button>
+        <button class="btn ghost" onclick="openGallery()">Ver imagens</button>
+      </div>
+    </div>
+  </div>  <script>
+    function openModal(){document.getElementById('modal').style.display='flex'}
+    function closeModal(e){if(!e || e.target.id==='modal' || e.target.className==='close'){document.getElementById('modal').style.display='none'}}
+    function openGallery(){window.open('gallery.html','_blank')}
+    function reserveDemo(){alert('Obrigado! Em um site real você poderia escolher loja e horário — esta é uma versão demonstrativa.')}
+    function openContact(){alert('Envie-nos um e-mail para contato@dreamlink.ai — versão demonstrativa.')}
+    function startDemo(){alert('Simulação iniciada: imagine um ambiente calmo, mar, céu estrelado e um despertar suave. (Demo mock)')}
+  </script></body>
+</html><!-- Deployment notes:
+1) Coloque este arquivo como index.html em um diretório.
+2) Crie uma pasta "images" ao lado e adicione os arquivos:
+   - dreamlink_showcase.png  (imagem de produto em vitrine)
+   - dreamlink_store_demo.png (imagem do usuário sorrindo na loja)
+3) Faça deploy em um host estático (Netlify, Vercel, GitHub Pages).
+4) Aponte o domínio DreamLink.ai para o host (configurar DNS CNAME/A conforme serviço).
+-->
